@@ -57,7 +57,8 @@ int clip(int **pic, int len, int *bd){
     return n >= m ? n : m ;
 }
 int main(void){
-    // int n, m;
+    
+    // input the basic data : row, column, picture
     scanf("%d %d", &n, &m);
     int len = n >= m? n : m;
     int pic[len][len], *p[len];
@@ -69,15 +70,16 @@ int main(void){
     for(int i=0;i<n;i++)
         for(int j=0;j<m;j++)
             scanf("%d", &pic[i][j]);
-
+    
+    // input the command lines
     int line;
     scanf("%d", &line);
     for(int time=0;time<line;time++){
-        char a, temp1 = getchar();
+        char a, temp1 = getchar();　 // jump the space
         scanf("%c", &a);
         if(a == 'r'){
             int t;
-            char diretion, temp2 = getchar();
+            char diretion, temp2 = getchar();  // jump the space
             scanf("%c %d", &diretion, &t);
             t %= 4;
             if(diretion == 'r'){
